@@ -9,6 +9,7 @@ const disorderVeget = document.getElementById('veget');
 const disorderVegan = document.getElementById('vegan');
 const disorderAlerg = document.getElementById('alerg');
 const disorderSpezi = document.getElementById('spezi');
+const peopleCount = document.getElementById('people');
 
 helpCheckbox.addEventListener('change', function() {
     if (helpCheckbox.checked) {
@@ -20,7 +21,6 @@ helpCheckbox.addEventListener('change', function() {
         gebId('helpnot').checked = true;
     }
 });
-
 helpNotCheckbox.addEventListener('change', function() {
     if (helpNotCheckbox.checked) {
         gebId('help').checked = false;
@@ -30,7 +30,6 @@ helpNotCheckbox.addEventListener('change', function() {
         gebId('helpnot').checked = false;
     }
 });
-
 disorderAll.addEventListener('change', function() {
     if (disorderAll.checked) {
         gebId('veget').checked = false;
@@ -59,7 +58,23 @@ disorderSpezi.addEventListener('change', function() {
         gebId('all').checked = false;
     }
 });
+peopleCount.addEventListener('change', function() {
+    gebId('peopleinfo1').style.display = 'none';
+    gebId('peopleinfo2').style.display = 'none';
+    gebId('peopleinfo3').style.display = 'none';
+    gebId('peopleinfo4').style.display = 'none';
 
+    switch (peopleCount.value) {
+        case '4':
+            gebId('peopleinfo4').style.display = 'block';
+        case '3':
+            gebId('peopleinfo3').style.display = 'block';
+        case '2':
+            gebId('peopleinfo2').style.display = 'block';
+        case '1':
+            gebId('peopleinfo1').style.display = 'block';
+    }
+});
 function redirectAndmelden() {
     window.location.href = "/";
 }

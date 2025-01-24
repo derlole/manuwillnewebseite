@@ -1,10 +1,35 @@
-<h1>indes.ejs</h1>
+
 <div class="main-1">
     <div class="inner-form">
         test
-        <form action="">
+        <form action="/createNewEntry" method="post">
+            <input type="text" name="name" placeholder="Name:" required>
+            <input type="text" name="lastName" placeholder="Nachname:" required>
+            <p>Ich helfe</p>
+            <input type="checkbox" name="help" id="help">
+            <p>Ich helfe nicht</p>
+            <input type="checkbox" name="helpnot" id="helpnot" checked>
+            <input type="number" name="telnum" placeholder="Telefonnummer:" id="telnum">
+            <p>ich muss parken</p>
+            <input type="checkbox" name="parkplatz" id="parking">
+            <input type="number" name="arrival" id="arrival" placeholder="Ankunft:" >
+            <input type="number" name="people" id="people" placeholder="Ich bringe x leute mit">
+            <!-- <input type="namen" name="email" placeholder="Email:" > -->
+            <div>
+                <p>Ich esse alles</p>
+                <input type="checkbox" name="all" id="all" text="Ich esse alles" checked>
+                <p>vegetarisch</p>
+                <input type="checkbox" name="veget" id="veget" placeholder="vegetatrisch">
+                <p>vegan</p>
+                <input type="checkbox" name="vegan" id="vegan" >
+                <p>allergiker</p>
+                <input type="checkbox" name="alerg" id="alerg" >
+                <p>Ich bin spezi</p>
+                <input type="checkbox" name="spezi" id="spezi" >
+            </div>
+            <input type="text" name="things" placeholder="Das möchte ich noch sagen:" >
+            <button type="submit">Einscheisen</button>
             
         </form>
     </div>
 </div>
-<%= message %>

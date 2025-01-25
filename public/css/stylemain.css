@@ -3,7 +3,10 @@
     --contrast: #fe5f95;
     --light: #d9d9d9;
   }
-
+  ::selection {
+    background-color: var(--dark); /* Hintergrundfarbe */
+    color: var(--light);/* Textfarbe */
+  }
 body{
     display: flex;
     margin: 0;
@@ -117,10 +120,10 @@ input[type="checkbox"] {
   }
 
   input[type="number"]{
-    display:none;
     background-color: var(--light); /* Heller Hintergrund */
     border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
     border-radius: 30px; /* Runde Ecken */
+    max-height: 40px;
     padding: 5px 10px;
     margin: 10px 5px 10px 5px;
     font-size: 16px;
@@ -147,3 +150,82 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
+.hidden{
+  display: none;
+}
+input[type="time"]{
+  background-color: var(--light); /* Heller Hintergrund */
+  border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
+  border-radius: 30px; /* Runde Ecken */
+  padding: 5px 10px;
+  margin: 10px 5px 10px 5px;
+  font-size: 16px;
+  color: var(--contrast);
+  font-family: "Jua", serif;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
+}
+input[type="time"]:focus {
+  outline: none;
+  border: 2px solid var(--dark); 
+}
+
+.textfeld {
+  background-color: var(--light); /* Heller Hintergrund */
+  border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
+  border-radius: 30px; /* Runde Ecken */
+  padding: 5px 10px;
+  margin: 10px 5px 10px 5px;
+  font-size: 16px;
+  color: var(--contrast);
+  font-family: "Jua", serif;
+  resize: none;
+  width: 96%;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
+  height: auto;  /* Höhe wächst automatisch */
+  overflow-y: hidden;  /* Verhindert Scrollen, wenn der Text wächst */
+  resize: vertical;  /* Ermöglicht dem Benutzer, das Textfeld vertikal zu vergrößern */
+}
+
+.textfeld:focus {
+  resize: none;
+  outline: none;
+  border: 2px solid var(--dark); 
+}
+.patrick{
+  height: 350px;
+  position: absolute; /* Herausnehmen aus dem normalen Layoutfluss */
+  bottom: -400px;
+  right: 0; /* Positioniert den Button ganz rechts */
+}
+.patrickUnten{
+  bottom: -400px;
+}
+
+.submitButton:hover{
+  background-color: rgba(var(--dark), 0.8);; /* 50% Transparenz */
+  border:2px solid var(--contrast);
+  color: var(--contrast);
+}
+.submitButton {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 5px 10px 5px 10px;
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
+  border:2px solid var(--dark);
+  border-radius: 10px;
+}
+
+.logo{
+  width:320px;
+  position: absolute; /* Herausnehmen aus dem normalen Layoutfluss */
+  top:175px;
+  left: 20px; /* Positioniert den Button ganz rechts */
+}
+.patrickOben{
+  bottom: -135px;
+}
+

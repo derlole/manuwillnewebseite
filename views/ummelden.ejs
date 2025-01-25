@@ -1,1 +1,68 @@
-<h1>ummelden</h1>
+<img class="logo" src="/img/logo.png">
+<div class="main-1">
+    <div class="inner-form">
+        <form action="/updateEntry" method="post">
+
+            <div class="rahmen">
+                <div class="stapeln">
+                    <div class="kumpeln zentrieren">
+                        <div class="stapeln zentrieren marginZehn">
+                            <p>ICH HELFE</p>
+                            <input type="checkbox" name="help" id="help">
+                            <label for="help"></label>
+                        </div>
+                        <div class="stapeln zentrieren marginZehn">
+                            <p>...NICHT</p>
+                            <input type="checkbox" name="helpnot" id="helpnot" checked>
+                            <label for="helpnot"></label>
+                        </div>
+                    </div>
+                    
+                    <input type="number" name="telnum" class="hidden"placeholder="Telefonnummer" id="telnum">   
+                </div>
+            </div>
+
+            <div class="rahmen stapeln zentrieren">
+                <div clas="stapeln zentrieren">
+                    <p>ANKUNFTSZEIT</p>
+                    <input type="time" name="arrival" id="arrival" class="nomargin" placeholder="Ankunftszeit" >
+                </div>
+                <div class="kumpeln">
+                    <div class="stapeln zentrieren marginZehn">
+                        <p>BRAUCHE PARKPLATZ</p>
+                        <input type="checkbox" name="parkplatz" id="parkplatz">
+                        <label for="parkplatz"></label>
+                    </div>
+                    <div class="stapeln zentrieren marginZehn">
+                        <p>BRAUCHE SCHLAFPLATZ</p>
+                        <input type="checkbox" name="schlafplatz" id="schlafplatz">
+                        <label for="schlafplatz"></label>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="rahmen kumpeln">
+                <div class="stapeln">
+                    <input type="number" name="people" id="people" placeholder="Anhang">
+                    <p class="hidden" id="tooMuchPeople">Die maximale Anzahl an Personen ist 5.<br> Wenn es mehr sind, meldet euch bitte einzeln an.</p>
+                </div>
+                
+                <div class="stapeln">
+                    <input type="text" name="peopleinfo1" id="peopleinfo1" style="display: none;" placeholder="Name">
+                    <input type="text" name="peopleinfo2" id="peopleinfo2" style="display: none;" placeholder="Name">
+                    <input type="text" name="peopleinfo3" id="peopleinfo3" style="display: none;" placeholder="Name">
+                    <input type="text" name="peopleinfo4" id="peopleinfo4" style="display: none;" placeholder="Name">
+                </div> 
+            </div>
+            
+            <div class="zentrieren stapeln">
+                <textarea class="textfeld" name="text" id="text" placeholder="Anmerkungen" oninput="autoGrow(this)"></textarea>
+                <button type="submit" id="submit" class="submitButton">BESTAETIGEN</button>
+            </div>
+        </form>
+    </div>
+
+    <img class="patrickOben patrick" id="patrick" alt="Patrick" src="/img/bauchi.png">
+</div>

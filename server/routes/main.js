@@ -21,7 +21,7 @@ router.post("/createNewEntry", async (req, res) => {
     try {
         const { name, lastName, telnum, people, peopleinfo1, peopleinfo2, peopleinfo3, peopleinfo4, help, helpnot, all,veget,vegan,alerg,spezi, arrival, parkplatz, things, schlafplatz } = req.body;
         console.log(req.body);
-        res.send(true);
+        //res.send(true);
     } catch (error) {
         res.send(false);
     }

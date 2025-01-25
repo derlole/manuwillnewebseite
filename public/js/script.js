@@ -66,6 +66,7 @@ peopleCount.addEventListener('change', function() {
     gebId('peopleinfo2').style.display = 'none';
     gebId('peopleinfo3').style.display = 'none';
     gebId('peopleinfo4').style.display = 'none';
+    gebId('tooMuchPeople').style.display = 'none';
 
     switch (peopleCount.value) {
         case '4':
@@ -76,6 +77,9 @@ peopleCount.addEventListener('change', function() {
             gebId('peopleinfo2').style.display = 'block';
         case '1':
             gebId('peopleinfo1').style.display = 'block';
+            break;
+        default:
+            gebId('tooMuchPeople').style.display = 'block';
     }
 });
 function redirectAndmelden() {
@@ -87,3 +91,27 @@ function redirectUmmelden() {
 function redirectAbmelden() {
     window.location.href = "/abmelden";
 }
+
+function autoGrow(element) {
+    element.style.height = "auto";  // Setzt die Höhe auf "auto", um die Größe zurückzusetzen
+    element.style.height = (element.scrollHeight) + "px";  // Setzt die Höhe auf die Höhe des Inhalts
+  }
+
+  gebId('submit').addEventListener('click', function() {
+    const patrick = document.getElementById('patrick');
+    console.log("test")
+    
+    setTimeout(function() {
+      patrick.src = '/img/mid1.png'; 
+    }, 80);
+  
+    setTimeout(function() {
+      patrick.src = '/img/mid2.png'; 
+    }, 160);
+  
+    setTimeout(function() {
+      patrick.src = '/img/todo_bem.png';
+    }, 240);
+  });
+  
+  

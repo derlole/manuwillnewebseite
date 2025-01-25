@@ -2,6 +2,7 @@ function gebId(id) {
     return document.getElementById(id);
 }
 
+var i = 0;
 const helpCheckbox = document.getElementById('help');
 const helpNotCheckbox = document.getElementById('helpnot');
 const disorderAll = document.getElementById('all');
@@ -89,7 +90,17 @@ function redirectUmmelden() {
     window.location.href = "/ummelden";
 }
 function redirectAbmelden() {
-    window.location.href = "/abmelden";
+    i++
+    if(i < 4){
+        if(i%2 == 1){
+            gebId('abmelden').style.marginLeft = '100px';
+        }else{
+            gebId('abmelden').style.marginLeft = '0px';
+        }
+        return
+    }else{
+        window.location.href = "/abmelden";
+    }
 }
 
 function autoGrow(element) {

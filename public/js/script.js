@@ -15,16 +15,19 @@ helpCheckbox.addEventListener('change', function() {
     if (helpCheckbox.checked) {
         gebId('helpnot').checked = false;
         gebId('telnum').required = true;
+        telnum.style.display = 'block';
         console.log(document.getElementById('telnum').require);
     } else {
         gebId('telnum').required = false
         gebId('helpnot').checked = true;
+        
     }
 });
 helpNotCheckbox.addEventListener('change', function() {
     if (helpNotCheckbox.checked) {
         gebId('help').checked = false;
         gebId('telnum').required = false;
+        telnum.style.display = 'none';
     } else {
         gebId('telnum').required = true
         gebId('helpnot').checked = false;

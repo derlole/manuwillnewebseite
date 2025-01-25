@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+    justify-content: center; /* Zentriert den Text im Header */
+    align-items: center;
+    background-color: var(--contrast);
+    border-radius: 50px;
+    margin-top: 0; /* Verhindert jeglichen Abstand oben */
+    padding: 10px; /* Optional: für etwas Abstand im Header */
+}
+
+.headerButtons {
+    display: flex; /* Verwendet Flexbox, um die Buttons nebeneinander zu platzieren */
+    justify-content: center; /* Zentriert die Buttons horizontal */
+    gap: 10px; /* Optional: fügt einen Abstand zwischen den Buttons hinzu */
+}
+.melden{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 5px 10px 5px 10px;
+    font-family: "Jua", serif;
+    font-weight: 400;
+    font-style: normal;
+    border:none;
+    border-radius: 10px;
+}
+.melden:hover{
+    background-color: rgba(var(--dark), 0.8);; /* 50% Transparenz */
+}

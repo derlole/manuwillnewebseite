@@ -1,3 +1,149 @@
+:root {
+    --dark: #820263;
+    --contrast: #fe5f95;
+    --light: #d9d9d9;
+  }
+
 body{
-    background-color: #d9d9d9;
+    display: flex;
+    margin: 0;
+    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+    font-family: "Jua", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--light);
+    padding: 20px;
+    color: var(--dark);
+}
+.fontPink{
+    color: var(--contrast);
+}
+.fontLight{
+    color: var(--light);
+}
+.fontDark{
+    color: var(--dark);
+}
+.inner-form{
+    /*border: var(--contrast) 2px solid;*/
+    display: flex;
+    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+    justify-content: center; /* Zentriert den Text im Header */
+    align-items: center;
+    border-radius: 50px;
+    margin-top: 20px; /* Verhindert jeglichen Abstand oben */
+    padding: 10px; /* Optional: für etwas Abstand im Header */
+}
+.stapeln{
+    display: flex;
+    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+}
+.kumpeln{
+    display: flex; /* Verwendet Flexbox, um die Buttons nebeneinander zu platzieren */
+    justify-content: center; /* Zentriert die Buttons horizontal */
+}
+.nomargin{
+    margin: 0;
+}
+.zentrieren{
+    align-items: center;
+}
+input[type="text"]{
+    background-color: var(--light); /* Heller Hintergrund */
+    border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
+    border-radius: 30px; /* Runde Ecken */
+    padding: 5px 10px;
+    margin: 10px 5px 10px 5px;
+    font-size: 16px;
+    color: var(--contrast);
+    font-family: "Jua", serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
+}
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid var(--dark); 
+  }
+.rahmen{
+    border: var(--contrast) solid 2px;
+    background-color: var(--light);
+    border-radius:30px;
+    padding: 10px 20px;
+    margin: 5px 10px;
+}
+
+
+input[type="checkbox"] {
+    display: none; /* Verstecke die ursprüngliche Checkbox */
+  }
+  
+  /* Style des eigenen Designs der Checkbox */
+  input[type="checkbox"] + label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--light);
+    border: 2px solid var(--contrast);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Wenn die Checkbox aktiviert ist (checked) */
+  input[type="checkbox"]:checked + label {
+    background-color: var(--contrast);
+  }
+  
+  /* Der Haken, der innerhalb der Checkbox erscheint */
+  input[type="checkbox"]:checked + label::before {
+    content: ":D"; /* Hakenzeichen */
+    color: var(--light); /* Hakenfarbe */
+    font-size: 16px; /* Größe des Hakens */
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%); /* Zentriert den Haken */
+    transition: opacity 0.3s ease;
+  }
+  
+  input[type="checkbox"] + label:hover {
+    background-color: var(--contrast); 
+    border-color: var(--light);
+  }
+  
+  input[type="checkbox"]:focus + label {
+    box-shadow: 0 0 5px var(--contrast); /* Schlagschatten für Fokus */
+  }
+
+  input[type="number"]{
+    display:none;
+    background-color: var(--light); /* Heller Hintergrund */
+    border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
+    border-radius: 30px; /* Runde Ecken */
+    padding: 5px 10px;
+    margin: 10px 5px 10px 5px;
+    font-size: 16px;
+    color: var(--contrast);
+    font-family: "Jua", serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
+}
+input[type="number"]:focus {
+    outline: none;
+    border: 2px solid var(--dark); 
+  }
+  .marginZehn{
+    margin: 10px;
+  }
+
+  /* Entferne die Spinner (Pfeile) für das input[type="number"] */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Webkit (Chrome, Safari, etc.) */
+  margin: 0; /* Verhindert, dass die Pfeile Platz einnehmen */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }

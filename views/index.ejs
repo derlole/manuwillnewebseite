@@ -1,37 +1,81 @@
-
 <div class="main-1">
     <div class="inner-form">
-        test
         <form action="/createNewEntry" method="post">
-            <input type="text" name="name" placeholder="Name:" required>
-            <input type="text" name="lastName" placeholder="Nachname:" required>
-            <p>Ich helfe</p>
-            <input type="checkbox" name="help" id="help">
-            <p>Ich helfe nicht</p>
-            <input type="checkbox" name="helpnot" id="helpnot" checked>
-            <input type="number" name="telnum" placeholder="Telefonnummer:" id="telnum">
-            <p>ich muss parken</p>
-            <input type="checkbox" name="parkplatz" id="parking">
-            <input type="number" name="arrival" id="arrival" placeholder="Ankunft:" >
-            <input type="number" name="people" id="people" placeholder="Ich bringe x leute mit">
-            <input type="text" name="peopleinfo1" id="peopleinfo1" style="display: none;">
-            <input type="text" name="peopleinfo2" id="peopleinfo2" style="display: none;">
-            <input type="text" name="peopleinfo3" id="peopleinfo3" style="display: none;">
-            <input type="text" name="peopleinfo4" id="peopleinfo4" style="display: none;">
-            <!-- <input type="namen" name="email" placeholder="Email:" > -->
-            <div>
+
+            <div class="rahmen kumpeln">
+                <div class="stapeln zentrieren">
+                    <p class="nomargin">NAME</p>
+                    <input type="text" name="name" placeholder="Vorname" required>
+                </div>
+                <div class="stapeln zentrieren">
+                    <p class="nomargin">NACHNAME</p>
+                    <input type="text" name="lastName" placeholder="Nachname" required>    
+                </div>
+            </div>
+
+            <div class="rahmen">
+                <div class="stapeln">
+                    <div class="kumpeln zentrieren">
+                        <div class="stapeln zentrieren marginZehn">
+                            <p>ICH HELFE</p>
+                            <input type="checkbox" name="help" id="help">
+                            <label for="help"></label>
+                        </div>
+                        <div class="stapeln zentrieren marginZehn">
+                            <p>...NICHT</p>
+                            <input type="checkbox" name="helpnot" id="helpnot" checked>
+                            <label for="helpnot"></label>
+                        </div>
+                    </div>
+                    
+                    <input type="number" name="telnum" placeholder="Telefonnummer" id="telnum">   
+                </div>
+            </div>
+
+            <div class="rahmen kumpeln">
+                <div class="stapeln zentrieren marginZehn">
+                    <p>BRAUCHE PARKPLATZ</p>
+                    <input type="checkbox" name="parkplatz" id="parking" checked>
+                    <label for="parkplatz"></label>
+                </div>
+                <div class="stapeln zentrieren marginZehn">
+                    <p>BRAUCHE SCHLAFPLATZ</p>
+                    <input type="checkbox" name="schlafplatz" id="sleeping" checked>
+                    <label for="schlafplatz"></label>
+                </div>
+                
+                <input type="number" name="arrival" id="arrival" placeholder="Ankunft" >
+            </div>
+            
+            <div class="rahmen">
+                <input type="number" name="people" id="people" placeholder="Ich bringe x leute mit">
+                <input type="text" name="peopleinfo1" id="peopleinfo1" style="display: none;">
+                <input type="text" name="peopleinfo2" id="peopleinfo2" style="display: none;">
+                <input type="text" name="peopleinfo3" id="peopleinfo3" style="display: none;">
+                <input type="text" name="peopleinfo4" id="peopleinfo4" style="display: none;">
+            </div>
+            
+            
+            <div class="rahmen kumpeln">
                 <p>Ich esse alles</p>
                 <input type="checkbox" name="all" id="all" text="Ich esse alles" checked>
+                <label for="all"></label>
                 <p>vegetarisch</p>
                 <input type="checkbox" name="veget" id="veget" placeholder="vegetatrisch">
+                <label for="veget"></label>
                 <p>vegan</p>
                 <input type="checkbox" name="vegan" id="vegan" >
+                <label for="vegan"></label>
                 <p>allergiker</p>
                 <input type="checkbox" name="alerg" id="alerg" >
+                <label for="alerg"></label>
                 <p>Ich bin spezi</p>
                 <input type="checkbox" name="spezi" id="spezi" >
+                <label for="spezi"></label>
             </div>
-            <input type="text" name="things" placeholder="Das möchte ich noch sagen:" >
+
+            <input type="text" name="things" placeholder="Anmerkungen" >
+
             <button type="submit">Einscheisen</button>
             
         </form>

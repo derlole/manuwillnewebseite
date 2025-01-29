@@ -7,11 +7,16 @@
     background-color: var(--dark); /* Hintergrundfarbe */
     color: var(--light);/* Textfarbe */
   }
+  @font-face {
+    font-family: 'Jua';
+    src: url('../fnt/JUA-REGULAR.TTF') format('truetype');
+  }
+  
 body{
     display: flex;
     margin: 0;
     flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
-    font-family: "Jua", serif;
+    font-family: 'Jua', serif;
     font-weight: 400;
     font-style: normal;
     background-color: var(--light);
@@ -200,7 +205,7 @@ input[type="time"]:focus {
   right: 0; /* Positioniert den Button ganz rechts */
 }
 .patrickUnten{
-  bottom: 0px;
+  top: 700px;
 }
 
 .submitButton:hover{

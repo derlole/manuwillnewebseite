@@ -1,12 +1,14 @@
 header {
+    grid-area: head;
     display: flex;
-    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
-    justify-content: center; /* Zentriert den Text im Header */
+    flex-direction: column;
+    justify-content: center; 
     align-items: center;
     background-color: var(--contrast);
     border-radius: 50px;
     margin-top: 0; /* Verhindert jeglichen Abstand oben */
     padding: 10px; /* Optional: für etwas Abstand im Header */
+    margin-bottom: 10px;
 }
 
 .headerButtons {

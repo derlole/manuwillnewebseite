@@ -1,13 +1,44 @@
-<img class="logo" src="/img/logo.png">
-<div class="counterPeople" id="counterPeople"> <%- guests.length %> </div>
-<div class="countdown" id="countdown"> </div>
+<div class="left">
+    <img class="logo hidden" src="/img/logo.png">
+    <div class="counterPeople stapeln zentrieren" id="counterPeople">
+        <p>ANGEMELDETE GAESTE</p>
+        <hr>
+        <numOfPeople><%- guests.length %></numOfPeople>
+    </div>
+    <div class="counterPeople stapeln zentrieren">
+        <p>VERBLEIBENDE ZEIT</p>
+        <div class="kumpeln">
+            <div class="timeField stapeln zentrieren">
+                <p class="cdAnzeigen" id="daysAnzeige"></p>
+                <hr>
+                Tage
+            </div>
+            <div class="timeField stapeln zentrieren">
+                <p class="cdAnzeigen" id="hoursAnzeige"></p>
+                <hr>
+                Stunden
+            </div>
+            <div class="timeField stapeln zentrieren">
+                <p class="cdAnzeigen" id="minAnzeige"></p>
+                <hr>
+                Minuten
+            </div>
+            <div class="timeField stapeln zentrieren">
+                <p class="cdAnzeigen" id="secAnzeige"></p>
+                <hr>
+                Sekunden
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="main-1">
+
+<div class="main-1 mid">
     <div class="inner-form">
-        <h1 id="message"></h1>
+        <h1 id="message" class="hidden"></h1>
         <form action="/createNewEntry" method="post" id="mainForm">
 
-            <div class="rahmen kumpeln">
+            <div class="rahmen kumpeln noMarginTop">
                 <div class="stapeln zentrieren">
                     <p class="nomargin">NAME</p>
                     <input type="text" name="name" placeholder="Vorname" required>
@@ -106,6 +137,8 @@
             </div>
         </form>
     </div>
+</div>
 
+<div class="right">
     <img class="patrick patrickUnten" id="patrick" alt="Patrick" src="/img/bauchi.png">
 </div>

@@ -17,9 +17,12 @@
 }
 
 body {
-  display: flex;
-  margin: 0;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "head head head"
+    "left mid right";
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 5px;
   /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
   font-family: "Jua", serif;
   font-weight: 400;
@@ -28,6 +31,16 @@ body {
   padding: 20px;
   color: var(--dark);
 }
+.left {
+  grid-area: left;
+}
+.mid {
+  grid-area: mid;
+}
+.right {
+  grid-area: right;
+}
+
 
 .fontPink {
   color: var(--contrast);
@@ -50,10 +63,7 @@ body {
   /* Zentriert den Text im Header */
   align-items: center;
   border-radius: 50px;
-  margin-top: 20px;
-  /* Verhindert jeglichen Abstand oben */
-  padding: 10px;
-  /* Optional: für etwas Abstand im Header */
+  margin:0;
 }
 
 .stapeln {
@@ -293,4 +303,44 @@ input[type="time"]:focus {
 
 .width150px{
   width: 150px;
+}
+
+.counterPeople{
+  margin:0;
+  width:100%;
+  background-color: var(--dark);
+  color: var(--light);
+  border-radius: 30px;
+  margin-bottom: 7px;
+}
+
+hr {
+  margin:0;
+  border:none;
+  border-radius:10px;
+  height: 2px;
+  width:90%;
+  background-color: var(--contrast);  /* Verwendet die CSS-Variable für die Farbe */
+}
+
+numOfPeople{
+  margin: 12px 0px;
+  font-size: 50px;
+}
+
+.timeField{
+  background-color: var(--light);
+  border-radius: 20px;
+  width: 65px;
+  height: 65px;
+  margin: 2.5px;
+  color: var(--dark);
+  margin-bottom:11px;
+}
+.cdAnzeigen{
+  font-size: 25px;
+  margin:5px 0 0 0;
+}
+.noMarginTop{
+  margin-top: 0;
 }

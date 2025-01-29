@@ -127,7 +127,7 @@ function autoGrow(element) {
 
     if (message) {
         gebId('message').innerHTML = decodeURIComponent(message); // Falls vorhanden, anzeigen
-    }
+    
 
     const patrick = document.getElementById('patrick');
     
@@ -142,4 +142,5 @@ function autoGrow(element) {
     setTimeout(function() {
       patrick.src = '/img/todo_bem.png';
     }, 240+400);
+}
 });

@@ -9,7 +9,10 @@ router.use(bodyParser.json());
 
 
 router.get("/", (req, res) => {
-    res.render("index", { title: "Home", message: "Willkommen bei meiner Website!" });
+    Guest.find({})
+    .then((guests) => {
+            res.render("index", { title: "Home", guests: guests, message: req.query.message });
+    });
 });
 router.get("/ummelden", async (req, res) => {
     res.render("ummelden", { title: "Ummelden" });

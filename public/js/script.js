@@ -149,3 +149,17 @@ function autoGrow(element) {
     }, 240+400);
 }
 });
+
+function updateCountdown() {
+    const timeDifference = new Date("2025-08-28T14:00:00") - new Date();
+
+    const days = Math.floor(timeDifference / (1000 * 3600 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600));
+    const minutes = Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = 
+        days + " Tage " + hours + " Stunden " + minutes + " Minuten " + seconds + " Sekunden ";
+}
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown();

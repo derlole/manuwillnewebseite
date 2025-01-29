@@ -3,7 +3,8 @@
 
 <div class="main-1">
     <div class="inner-form">
-        <form action="/createNewEntry" method="post">
+        <h1 id="message"></h1>
+        <form action="/createNewEntry" method="post" id="mainForm">
 
             <div class="rahmen kumpeln">
                 <div class="stapeln zentrieren">
@@ -99,7 +100,7 @@
                 </div>
             </div>
             <div class="zentrieren stapeln">
-                <textarea class="textfeld" name="text" id="text" placeholder="Anmerkungen" oninput="autoGrow(this)"></textarea>
+                <textarea class="textfeld" name="things" id="things" placeholder="Anmerkungen" oninput="autoGrow(this)></textarea>
                 <button type="submit" id="submit" class="submitButton">BESTAETIGEN</button>
             </div>
         </form>

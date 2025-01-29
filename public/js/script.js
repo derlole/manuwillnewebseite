@@ -62,22 +62,24 @@ disorderSpezi.addEventListener('change', function() {
         gebId('all').checked = false;
     }
 });
-peopleCount.addEventListener('change', function() {
+peopleCount.addEventListener('input', function() {
     gebId('peopleinfo1').style.display = 'none';
     gebId('peopleinfo2').style.display = 'none';
     gebId('peopleinfo3').style.display = 'none';
     gebId('peopleinfo4').style.display = 'none';
     gebId('tooMuchPeople').style.display = 'none';
-
-    switch (peopleCount.value) {
-        case '4':
+    var num = Number(peopleCount.value)
+    switch (num) {
+        case 4:
             gebId('peopleinfo4').style.display = 'block';
-        case '3':
+        case 3:
             gebId('peopleinfo3').style.display = 'block';
-        case '2':
+        case 2:
             gebId('peopleinfo2').style.display = 'block';
-        case '1':
+        case 1:
             gebId('peopleinfo1').style.display = 'block';
+            break;
+        case 0:
             break;
         default:
             gebId('tooMuchPeople').style.display = 'block';
@@ -109,20 +111,35 @@ function autoGrow(element) {
   }
 
   gebId('submit').addEventListener('click', function() {
+    
+  });
+  
+  document.getElementById("mainForm").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Verhindert das Absenden mit Enter
+    }
+  });
+  
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var message = urlParams.get("message"); // Holen des Parameters 'message'
+
+    if (message) {
+        gebId('message').innerHTML = decodeURIComponent(message); // Falls vorhanden, anzeigen
+    }
+
     const patrick = document.getElementById('patrick');
-    console.log("test")
     
     setTimeout(function() {
       patrick.src = '/img/mid1.png'; 
-    }, 80);
+    }, 80+400);
   
     setTimeout(function() {
       patrick.src = '/img/mid2.png'; 
-    }, 160);
+    }, 160+400);
   
     setTimeout(function() {
       patrick.src = '/img/todo_bem.png';
-    }, 240);
-  });
-  
-  
+    }, 240+400);
+});

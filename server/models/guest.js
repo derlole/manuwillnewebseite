@@ -33,6 +33,10 @@ const guestSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    schlafplatz: {
+        type: Boolean,
+        default: false
+    },
     message: {
         type: String,
         default: null

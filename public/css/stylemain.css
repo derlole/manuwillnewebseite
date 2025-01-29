@@ -171,9 +171,9 @@ input[type="time"]:focus {
 }
 
 .textfeld {
-  background-color: var(--light); /* Heller Hintergrund */
-  border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
-  border-radius: 30px; /* Runde Ecken */
+  background-color: var(--light); 
+  border: 2px solid var(--contrast); 
+  border-radius: 30px;
   padding: 5px 10px;
   margin: 10px 5px 10px 5px;
   font-size: 16px;
@@ -182,10 +182,10 @@ input[type="time"]:focus {
   resize: none;
   width: 96%;
   box-sizing: border-box;
-  transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
-  height: auto;  /* Höhe wächst automatisch */
-  overflow-y: hidden;  /* Verhindert Scrollen, wenn der Text wächst */
-  resize: vertical;  /* Ermöglicht dem Benutzer, das Textfeld vertikal zu vergrößern */
+  transition: all 0.3s ease; 
+  height: auto;  
+  overflow-y: hidden;  
+  resize: none;  
 }
 
 .textfeld:focus {
@@ -196,11 +196,11 @@ input[type="time"]:focus {
 .patrick{
   height: 350px;
   position: absolute; /* Herausnehmen aus dem normalen Layoutfluss */
-  bottom: -400px;
+  bottom: 0px;
   right: 0; /* Positioniert den Button ganz rechts */
 }
 .patrickUnten{
-  bottom: -400px;
+  bottom: 0px;
 }
 
 .submitButton:hover{

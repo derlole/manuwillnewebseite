@@ -1,6 +1,19 @@
 <img class="logo" src="/img/logo.png">
 <div class="main-1">
     <div class="inner-form">
+        <form action="" method="post">
+            <div class="stapeln zentrieren">
+                <p>Gib deinen Namen ein, um Details an der Anmeldung zu veraendern.</p>
+                <div class="kumpeln">
+                    <input type="text" placeholder="Vorname" required>
+                    <input type="text" placeholder="Nachname" required>
+                </div>
+                <button type="submit" class="submitButton  width150px" onclick="formVisibility()">BESTAETIGEN</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="changeForm" class="inner-form hidden">
         <form action="/updateEntry" method="post">
 
             <div class="rahmen">

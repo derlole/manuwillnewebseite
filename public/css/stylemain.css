@@ -1,183 +1,231 @@
 :root {
-    --dark: #820263;
-    --contrast: #fe5f95;
-    --light: #d9d9d9;
-  }
-  ::selection {
-    background-color: var(--dark); /* Hintergrundfarbe */
-    color: var(--light);/* Textfarbe */
-  }
-  @font-face {
-    font-family: 'Jua';
-    src: url('../fnt/JUA-REGULAR.TTF') format('truetype');
-  }
-  
-body{
-    display: flex;
-    margin: 0;
-    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
-    font-family: 'Jua', serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: var(--light);
-    padding: 20px;
-    color: var(--dark);
-}
-.fontPink{
-    color: var(--contrast);
-}
-.fontLight{
-    color: var(--light);
-}
-.fontDark{
-    color: var(--dark);
-}
-.inner-form{
-    /*border: var(--contrast) 2px solid;*/
-    display: flex;
-    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
-    justify-content: center; /* Zentriert den Text im Header */
-    align-items: center;
-    border-radius: 50px;
-    margin-top: 20px; /* Verhindert jeglichen Abstand oben */
-    padding: 10px; /* Optional: für etwas Abstand im Header */
-}
-.stapeln{
-    display: flex;
-    flex-direction: column; /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
-}
-.kumpeln{
-    display: flex; /* Verwendet Flexbox, um die Buttons nebeneinander zu platzieren */
-    justify-content: center; /* Zentriert die Buttons horizontal */
-}
-.nomargin{
-    margin: 0;
-}
-.zentrieren{
-    align-items: center;
-}
-input[type="text"]{
-    background-color: var(--light); /* Heller Hintergrund */
-    border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
-    border-radius: 30px; /* Runde Ecken */
-    padding: 5px 10px;
-    margin: 10px 5px 10px 5px;
-    font-size: 16px;
-    color: var(--contrast);
-    font-family: "Jua", serif;
-    box-sizing: border-box;
-    transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
-}
-input[type="text"]:focus {
-    outline: none;
-    border: 2px solid var(--dark); 
-  }
-.rahmen{
-    border: var(--contrast) solid 2px;
-    background-color: var(--light);
-    border-radius:30px;
-    padding: 10px 20px;
-    margin: 5px 10px;
+  --dark: #820263;
+  --contrast: #fe5f95;
+  --light: #d9d9d9;
 }
 
-
-input[type="checkbox"] {
-    display: none; /* Verstecke die ursprüngliche Checkbox */
-  }
-  
-  /* Style des eigenen Designs der Checkbox */
-  input[type="checkbox"] + label {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--light);
-    border: 2px solid var(--contrast);
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  /* Wenn die Checkbox aktiviert ist (checked) */
-  input[type="checkbox"]:checked + label {
-    background-color: var(--contrast);
-  }
-  
-  /* Der Haken, der innerhalb der Checkbox erscheint */
-  input[type="checkbox"]:checked + label::before {
-    content: ":D"; /* Hakenzeichen */
-    color: var(--light); /* Hakenfarbe */
-    font-size: 16px; /* Größe des Hakens */
-    position: absolute;
-    top: 55%;
-    left: 55%;
-    transform: translate(-50%, -50%); /* Zentriert den Haken */
-    transition: opacity 0.3s ease;
-  }
-  
-  input[type="checkbox"] + label:hover {
-    background-color: var(--contrast); 
-    border-color: var(--light);
-  }
-  
-  input[type="checkbox"]:focus + label {
-    box-shadow: 0 0 5px var(--contrast); /* Schlagschatten für Fokus */
-  }
-
-  input[type="number"]{
-    background-color: var(--light); /* Heller Hintergrund */
-    border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
-    border-radius: 30px; /* Runde Ecken */
-    max-height: 40px;
-    padding: 5px 10px;
-    margin: 10px 5px 10px 5px;
-    font-size: 16px;
-    color: var(--contrast);
-    font-family: "Jua", serif;
-    box-sizing: border-box;
-    transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
-}
-input[type="number"]:focus {
-    outline: none;
-    border: 2px solid var(--dark); 
-  }
-  .marginZehn{
-    margin: 10px;
-  }
-
-  /* Entferne die Spinner (Pfeile) für das input[type="number"] */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none; /* Webkit (Chrome, Safari, etc.) */
-  margin: 0; /* Verhindert, dass die Pfeile Platz einnehmen */
+::selection {
+  background-color: var(--dark);
+  /* Hintergrundfarbe */
+  color: var(--light);
+  /* Textfarbe */
 }
 
-input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
+@font-face {
+  font-family: "Jua";
+  src: url("../fnt/JUA-REGULAR.TTF") format("truetype");
 }
-.hidden{
-  display: none;
+
+body {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--light);
+  padding: 20px;
+  color: var(--dark);
 }
-input[type="time"]{
-  background-color: var(--light); /* Heller Hintergrund */
-  border: 2px solid var(--contrast); /* Rand in der Kontrastfarbe */
-  border-radius: 30px; /* Runde Ecken */
+
+.fontPink {
+  color: var(--contrast);
+}
+
+.fontLight {
+  color: var(--light);
+}
+
+.fontDark {
+  color: var(--dark);
+}
+
+.inner-form {
+  /*border: var(--contrast) 2px solid;*/
+  display: flex;
+  flex-direction: column;
+  /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+  justify-content: center;
+  /* Zentriert den Text im Header */
+  align-items: center;
+  border-radius: 50px;
+  margin-top: 20px;
+  /* Verhindert jeglichen Abstand oben */
+  padding: 10px;
+  /* Optional: für etwas Abstand im Header */
+}
+
+.stapeln {
+  display: flex;
+  flex-direction: column;
+  /* Ermöglicht vertikale Anordnung des gesamten Inhalts */
+}
+
+.kumpeln {
+  display: flex;
+  /* Verwendet Flexbox, um die Buttons nebeneinander zu platzieren */
+  justify-content: center;
+  /* Zentriert die Buttons horizontal */
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.zentrieren {
+  align-items: center;
+}
+
+input[type="text"] {
+  background-color: var(--light);
+  /* Heller Hintergrund */
+  border: 2px solid var(--contrast);
+  /* Rand in der Kontrastfarbe */
+  border-radius: 30px;
+  /* Runde Ecken */
   padding: 5px 10px;
   margin: 10px 5px 10px 5px;
   font-size: 16px;
   color: var(--contrast);
   font-family: "Jua", serif;
   box-sizing: border-box;
-  transition: all 0.3s ease; /* Sanfte Übergänge bei Interaktionen */
+  transition: all 0.3s ease;
+  /* Sanfte Übergänge bei Interaktionen */
 }
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid var(--dark);
+}
+
+.rahmen {
+  border: var(--contrast) solid 2px;
+  background-color: var(--light);
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 5px 10px;
+}
+
+input[type="checkbox"] {
+  display: none;
+  /* Verstecke die ursprüngliche Checkbox */
+}
+
+/* Style des eigenen Designs der Checkbox */
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--light);
+  border: 2px solid var(--contrast);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Wenn die Checkbox aktiviert ist (checked) */
+input[type="checkbox"]:checked + label {
+  background-color: var(--contrast);
+}
+
+/* Der Haken, der innerhalb der Checkbox erscheint */
+input[type="checkbox"]:checked + label::before {
+  content: ":D";
+  /* Hakenzeichen */
+  color: var(--light);
+  /* Hakenfarbe */
+  font-size: 16px;
+  /* Größe des Hakens */
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  /* Zentriert den Haken */
+  transition: opacity 0.3s ease;
+}
+
+input[type="checkbox"] + label:hover {
+  background-color: var(--contrast);
+  border-color: var(--light);
+}
+
+input[type="checkbox"]:focus + label {
+  box-shadow: 0 0 5px var(--contrast);
+  /* Schlagschatten für Fokus */
+}
+
+input[type="number"] {
+  background-color: var(--light);
+  /* Heller Hintergrund */
+  border: 2px solid var(--contrast);
+  /* Rand in der Kontrastfarbe */
+  border-radius: 30px;
+  /* Runde Ecken */
+  max-height: 40px;
+  padding: 5px 10px;
+  margin: 10px 5px 10px 5px;
+  font-size: 16px;
+  color: var(--contrast);
+  font-family: "Jua", serif;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  /* Sanfte Übergänge bei Interaktionen */
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border: 2px solid var(--dark);
+}
+
+.marginZehn {
+  margin: 10px;
+}
+
+/* Entferne die Spinner (Pfeile) für das input[type="number"] */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* Webkit (Chrome, Safari, etc.) */
+  margin: 0;
+  /* Verhindert, dass die Pfeile Platz einnehmen */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="time"] {
+  background-color: var(--light);
+  /* Heller Hintergrund */
+  border: 2px solid var(--contrast);
+  /* Rand in der Kontrastfarbe */
+  border-radius: 30px;
+  /* Runde Ecken */
+  padding: 5px 10px;
+  margin: 10px 5px 10px 5px;
+  font-size: 16px;
+  color: var(--contrast);
+  font-family: "Jua", serif;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  /* Sanfte Übergänge bei Interaktionen */
+}
+
 input[type="time"]:focus {
   outline: none;
-  border: 2px solid var(--dark); 
+  border: 2px solid var(--dark);
 }
 
 .textfeld {
-  background-color: var(--light); 
-  border: 2px solid var(--contrast); 
+  background-color: var(--light);
+  border: 2px solid var(--contrast);
   border-radius: 30px;
   padding: 5px 10px;
   margin: 10px 5px 10px 5px;
@@ -187,32 +235,38 @@ input[type="time"]:focus {
   resize: none;
   width: 96%;
   box-sizing: border-box;
-  transition: all 0.3s ease; 
-  height: auto;  
-  overflow-y: hidden;  
-  resize: none;  
+  transition: all 0.3s ease;
+  height: auto;
+  overflow-y: hidden;
+  resize: none;
 }
 
 .textfeld:focus {
   resize: none;
   outline: none;
-  border: 2px solid var(--dark); 
+  border: 2px solid var(--dark);
 }
-.patrick{
+
+.patrick {
   height: 350px;
-  position: absolute; /* Herausnehmen aus dem normalen Layoutfluss */
+  position: absolute;
+  /* Herausnehmen aus dem normalen Layoutfluss */
   bottom: 0px;
-  right: 0; /* Positioniert den Button ganz rechts */
+  right: 0;
+  /* Positioniert den Button ganz rechts */
 }
-.patrickUnten{
+
+.patrickUnten {
   top: 700px;
 }
 
-.submitButton:hover{
-  background-color: rgba(var(--dark), 0.8);; /* 50% Transparenz */
-  border:2px solid var(--contrast);
+.submitButton:hover {
+  background-color: rgba(var(--dark), 0.8);
+  /* 50% Transparenz */
+  border: 2px solid var(--contrast);
   color: var(--contrast);
 }
+
 .submitButton {
   background-color: var(--dark);
   color: var(--light);
@@ -220,17 +274,23 @@ input[type="time"]:focus {
   font-family: "Jua", serif;
   font-weight: 400;
   font-style: normal;
-  border:2px solid var(--dark);
+  border: 2px solid var(--dark);
   border-radius: 10px;
 }
 
-.logo{
-  width:320px;
-  position: absolute; /* Herausnehmen aus dem normalen Layoutfluss */
-  top:175px;
-  left: 20px; /* Positioniert den Button ganz rechts */
+.logo {
+  width: 320px;
+  position: absolute;
+  /* Herausnehmen aus dem normalen Layoutfluss */
+  top: 175px;
+  left: 20px;
+  /* Positioniert den Button ganz rechts */
 }
-.patrickOben{
+
+.patrickOben {
   bottom: -135px;
 }
 
+.width150px{
+  width: 150px;
+}

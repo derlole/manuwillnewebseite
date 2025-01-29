@@ -11,6 +11,7 @@ const disorderVegan = document.getElementById('vegan');
 const disorderAlerg = document.getElementById('alerg');
 const disorderSpezi = document.getElementById('spezi');
 const peopleCount = document.getElementById('people');
+const changeForm = document.getElementById('changeForm');
 
 helpCheckbox.addEventListener('change', function() {
     if (helpCheckbox.checked) {
@@ -103,6 +104,10 @@ function redirectAbmelden() {
     }else{
         window.location.href = "/abmelden";
     }
+}
+
+function formVisibility(){
+    gebId('changeForm').style.display = 'flex';
 }
 
 function autoGrow(element) {

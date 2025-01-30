@@ -18,7 +18,10 @@ router.get("/ummelden", async (req, res) => {
     res.render("ummelden", { title: "Ummelden", guest: null, reportUserCreds: ""});
 });
 router.get("/abmelden", async (req, res) => {
-    res.render("abmelden", { title: "Abmelden" });
+    Guest.find({})
+    .then((guests) => {
+    res.render("abmelden", { title: "Abmelden",guests: guests });
+    });
 });
 router.post("/createNewEntry", async (req, res) => {
     try {

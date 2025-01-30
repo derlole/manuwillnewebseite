@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 router.get("/ummelden", async (req, res) => {
-    res.render("ummelden", { title: "Ummelden" });
+    res.render("ummelden", { title: "Ummelden", guest: null, reportUserCreds: ""});
 });
 router.get("/abmelden", async (req, res) => {
     res.render("abmelden", { title: "Abmelden" });
@@ -28,9 +28,9 @@ router.post("/createNewEntry", async (req, res) => {
         var disorder = [false,false,false,false,false]
         const arrivall = new Date("2024-01-28"); //hier noch das richtige datummfestlegen
         const [hours, minutes] = arrival.split(":").map(Number); 
-        if(hours == 0 || minutes == 0){
+        if(hours == 0 && minutes == 0){
             arrivall.setHours(0, 0, 0, 0);
-        }else{arrivall.setHours(hours, minutes, 0, 0); }
+        }else{arrivall.setHours((hours-1), minutes, 0, 0); }
 
 
         if(peopleinfo1){peopleinfo.push(peopleinfo1)}
@@ -70,8 +70,30 @@ router.post("/createNewEntry", async (req, res) => {
 
 router.post("/updateEntry", async (req, res) => {
     try {
-        const {  people, help, helpnot, arrival, parkplatz, things, id } = req.body;
-        console.log(req.body);
+        const { telnum, people, peopleinfo1, peopleinfo2, peopleinfo3, peopleinfo4, help, helpnot, arrival, parkplatz, things, schlafplatz, guestDB_id  } = req.body;
+        var peopleinfo =[]
+        var helpp = [false]
+        const arrivall = new Date("2024-01-28"); //hier noch das richtige datummfestlegen
+        const [hours, minutes] = arrival.split(":").map(Number);
+        if(hours == 0 && minutes == 0){
+            arrivall.setHours(0, 0, 0, 0);
+        }else{arrivall.setHours((hours-1), minutes, 0, 0); }
+        if(peopleinfo1){peopleinfo.push(peopleinfo1)}
+        if(peopleinfo2){peopleinfo.push(peopleinfo2)}
+        if(peopleinfo3){peopleinfo.push(peopleinfo3)}
+        if(peopleinfo4){peopleinfo.push(peopleinfo4)}
+        if(help != undefined){helpp[0] = true}
+        await Guest.findOneAndUpdate({ id: guestDB_id }, {
+            telnum: telnum,
+            people: people,
+            peopleinfo: peopleinfo,
+            help: helpp,
+            arrival: arrivall,
+            parking: parkplatz == "on" ? true : false,
+            schlafplatz: schlafplatz == "on" ? true : false,
+            message: things,
+        }, { new: true });
+
         res.send(true);
     } catch (error) {
         res.send(false);
@@ -84,6 +106,25 @@ router.post("/deleteEntry", async (req, res) => {
         res.send(true);
     } catch (error) {
         res.send(false);
+    }
+});
+router.post("/getUserCreds", async (req, res) => {
+    try {
+        const { vorname, nachname  } = req.body;
+        Guest.findOne({ "name.0": vorname, "name.1": nachname })
+        .then((guest) => {
+            if(guest != null){
+                if(guest.name[2] == false){
+                    res.render("ummelden", { title: "UserCreds", guest: guest, reportUserCreds: "" });
+                }else{
+                    res.render("ummelden", { title: "UserCreds", guest: guest, reportUserCreds: "Gast Abgemeldet" });
+                }
+            }else{
+                res.render("ummelden", { title: "UserCreds", guest: null, reportUserCreds: "Gast nicht gefunden" });
+            }
+        });
+    } catch (error) {
+        res.render("ummelden", { title: "UserCreds", guest: null, reportUserCreds: "Fehler beim finden des Gastes" });
     }
 });
 module.exports = router;

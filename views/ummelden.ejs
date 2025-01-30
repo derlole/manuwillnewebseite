@@ -1,14 +1,16 @@
+<div style="display: none;" id="guestData"> <%- JSON.stringify(guest) %></div>
 <img class="logo hidden" src="/img/logo.png">
 <div class="main-1 mid">
      <div id="changeLogin" class="inner-form">
-        <form action="" method="post">
+        <h1><%= reportUserCreds %></h1>
+        <form action="/getUserCreds" method="post">
             <div class="stapeln zentrieren">
                 <p>Gib deinen Namen ein, um Details an der Anmeldung zu veraendern.</p>
                 <div class="kumpeln">
-                    <input type="text" placeholder="Vorname" required>
-                    <input type="text" placeholder="Nachname" required>
+                    <input type="text" name="vorname" placeholder="Vorname" required>
+                    <input type="text" name="nachname" placeholder="Nachname" required>
                 </div>
-                <button type="submit" class="submitButton  width150px" onclick="formVisibility()">BESTAETIGEN</button>
+                <button type="submit" class="submitButton  width150px">BESTAETIGEN</button>
             </div>
         </form>
     </div>
@@ -71,10 +73,12 @@
             </div>
             
             <div class="zentrieren stapeln">
-                <textarea class="textfeld" name="text" id="text" placeholder="Anmerkungen" oninput="autoGrow(this)"></textarea>
+                <textarea class="textfeld" name="things" id="text" placeholder="Anmerkungen" oninput="autoGrow(this)"></textarea>
                 <button type="submit" id="submit" class="submitButton">BESTAETIGEN</button>
             </div>
+           <input type="text" name="guestDB_id" id="guestDB_id" style="display: none;">
         </form>
     </div>
 </div>
 <img class="patrickChangeInput right patrick" id="patrickChange" alt="Patrick" src="/img/bauchi.png">
+<script src="js/ummeldenOnlaod.js"></script>

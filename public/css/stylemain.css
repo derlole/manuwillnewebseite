@@ -189,10 +189,6 @@ input[type="number"]:focus {
   border: 2px solid var(--dark);
 }
 
-.marginZehn {
-  margin: 10px;
-}
-
 /* Entferne die Spinner (Pfeile) für das input[type="number"] */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -258,7 +254,7 @@ input[type="time"]:focus {
 }
 
 .patrick {
-  height: 350px;
+  width:100%;
 }
 
 .patrickAnmelden {
@@ -291,12 +287,7 @@ input[type="time"]:focus {
 }
 
 .logo {
-  width: 320px;
-  position: absolute;
-  /* Herausnehmen aus dem normalen Layoutfluss */
-  top: 175px;
-  left: 20px;
-  /* Positioniert den Button ganz rechts */
+  width: 50px;
 }
 
 
@@ -342,4 +333,32 @@ numOfPeople{
 }
 .noMarginTop{
   margin-top: 0;
+}
+
+.width120{
+  width:100px;
+  /*background-color: black;*/
+}
+minusGuest {
+  font-weight: 200;
+  font-size: 120px;
+}
+sadSmiley{
+  font-weight:200;
+  font-size: 70px;
+  padding: 20px;
+}
+.abmeldenComment{
+  color: var(--contrast);
+  transform: rotate(-20deg);
+  position: absolute;
+  left: 700px;
+  top: 175px;
+}
+.inline{
+  display: inline;
+}
+.marginTop{
+  margin-top: 15px;
+  margin-left: 5px;
 }

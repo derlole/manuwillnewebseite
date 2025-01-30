@@ -1,1 +1,36 @@
-<h1>HIER KANN MAN SICH ABMELDEN <br> (Auch wenn's illegal ist)</h1>
+<div class="main-1 mid">
+    <div style="display:none;" id="randomDiv"> <%- JSON.stringify(guests) %></div>
+    <p id="rueckmeldungAbmeldung"></p>
+    <div id="changeLogin" class="inner-form">
+        <form action="" method="post">
+            <div class="stapeln zentrieren">
+                <p>Gib deinen Namen ein, um dich abzumelden.</p>
+                <div class="kumpeln">
+                    <input type="text" name="vorname" placeholder="Vorname" required>
+                    <input type="text" name="nachname" placeholder="Nachname" required>
+                </div>
+                <button type="submit" class="submitButton  width150px" onclick="showAbmeldenBody" >BESTAETIGEN</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="abmeldenBody" class="hidden">
+        <div class="counterPeople stapeln zentrieren" id="counterPeople">
+            <p>AKTUELL GIBT ES</p>
+            <hr>
+            <numOfPeople><%- guests.length %></numOfPeople>
+            <p>ANGEMELDETE GAESTE</p>
+        </div>
+        <div class="stapeln zentrieren">
+            <p id="beSureAnweisung"></p>
+            <input type="text" id="beSure" required>
+            <button type="submit" class="submitButton  width150px" onclick="abmelden()">BESTAETIGEN</button>
+        </div>
+        
+    </div>
+</div>
+
+<div id="comment" class="abmeldenComment hidden">  
+    <minusGuest id="minusGuests"></minusGuest>
+    <sadSmiley>:(</sadSmiley>
+</div>             

@@ -1,5 +1,5 @@
 <div class="left">
-    <img class="logo hidden" src="/img/logo.png">
+    
     <div class="counterPeople stapeln zentrieren" id="counterPeople">
         <p>ANGEMELDETE GAESTE</p>
         <hr>
@@ -11,22 +11,22 @@
             <div class="timeField stapeln zentrieren">
                 <p class="cdAnzeigen" id="daysAnzeige"></p>
                 <hr>
-                Tage
+                days
             </div>
             <div class="timeField stapeln zentrieren">
                 <p class="cdAnzeigen" id="hoursAnzeige"></p>
                 <hr>
-                Stunden
+                hours
             </div>
             <div class="timeField stapeln zentrieren">
                 <p class="cdAnzeigen" id="minAnzeige"></p>
                 <hr>
-                Minuten
+                minutes
             </div>
             <div class="timeField stapeln zentrieren">
                 <p class="cdAnzeigen" id="secAnzeige"></p>
                 <hr>
-                Sekunden
+                seconds
             </div>
         </div>
     </div>
@@ -105,27 +105,27 @@
             
             
             <div class="rahmen kumpeln">
-                <div class="stapeln marginZehn zentrieren">
+                <div class="stapeln zentrieren width120">
                     <p>ESSE ALLES</p>
                     <input type="checkbox" name="all" id="all" text="Ich esse alles" checked>
                     <label for="all"></label>
                 </div>
-                <div class="stapeln marginZehn zentrieren">
+                <div class="stapeln zentrieren width120">
                     <p>VEGETARISCH</p>
                     <input type="checkbox" name="veget" id="veget" placeholder="vegetatrisch">
                     <label for="veget"></label>
                 </div>
-                <div class="stapeln marginZehn zentrieren">
+                <div class="stapeln zentrieren width120">
                     <p>VEGAN</p>
                     <input type="checkbox" name="vegan" id="vegan" >
                     <label for="vegan"></label>
                 </div>
-                <div class="stapeln marginZehn zentrieren">
+                <div class="stapeln zentrieren width120">
                     <p>ALLERGIEN</p>
                     <input type="checkbox" name="alerg" id="alerg" >
                     <label for="alerg"></label>
                 </div>
-                <div class="stapeln marginZehn zentrieren">
+                <div class="stapeln zentrieren width120">
                     <p>BIN SPEZIELL</p>
                     <input type="checkbox" name="spezi" id="spezi" >
                     <label for="spezi"></label>
@@ -133,7 +133,10 @@
             </div>
             <div class="zentrieren stapeln">
                 <textarea class="textfeld" name="things" id="things" placeholder="Anmerkungen" oninput="autoGrow(this)"></textarea>
-                <button type="submit" id="submit" class="submitButton">BESTAETIGEN</button>
+                <button type="submit" id="submit" class="submitButton kumpeln">
+                    <img class="logo" src="/img/logo.png">
+                    <div class="marginTop" >BESTAETIGEN</div>
+                </button>
             </div>
         </form>
     </div>

@@ -259,15 +259,17 @@ input[type="time"]:focus {
 
 .patrick {
   height: 350px;
-  position: absolute;
-  /* Herausnehmen aus dem normalen Layoutfluss */
-  bottom: 0px;
-  right: 0;
-  /* Positioniert den Button ganz rechts */
 }
 
-.patrickUnten {
-  top: 700px;
+.patrickAnmelden {
+  margin-top: 450px;
+}
+.patrickChangeLogin {
+  margin-top: 0;
+}
+
+.patrickChange{
+  margin-top: 200px;
 }
 
 .submitButton:hover {
@@ -297,9 +299,6 @@ input[type="time"]:focus {
   /* Positioniert den Button ganz rechts */
 }
 
-.patrickOben {
-  bottom: -135px;
-}
 
 .width150px{
   width: 150px;

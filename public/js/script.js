@@ -108,6 +108,8 @@ function redirectAbmelden() {
 
 function formVisibility(){
     gebId('changeForm').style.display = 'flex';
+    gebId('changeLogin').style.display = 'none';
+    gebId('patrickChange').classList.add('patrickChange');
 }
 
 function autoGrow(element) {

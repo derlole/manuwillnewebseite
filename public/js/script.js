@@ -7,7 +7,6 @@ const helpCheckbox = document.getElementById('help');
 const helpNotCheckbox = document.getElementById('helpnot');
 const changeForm = document.getElementById('changeForm');
 const peopleCount = document.getElementById('people');
-const beSureWord = "APFELSTRUDEL";
 
 helpCheckbox.addEventListener('change', function() {
     if (helpCheckbox.checked) {
@@ -53,41 +52,6 @@ function redirectAbmelden() {
         window.location.href = "/abmelden";
     }
 }
-
-function abmelden(){
-    //hier muss irgendwie der Datenbankkram rein (oder du machsts anders, aber yeet, so ist der weg wie ich meinen Kram halbwegs hinkrieg cF)
-    let inputValue = document.getElementById("beSure").value.trim().toUpperCase();
-        if (inputValue === beSureWord) {
-            var peopleGes = 1;
-            var dataGuests = JSON.parse(document.getElementById('randomDiv'));
-            var worked = "Anmeldung erfolgreich revidiert";
-
-            dataGuests.forEach(mitbringsel =>{ 
-                peopleGes += mitbringsel.people
-            })
-            gebId('minusGuests').textContent = "- " + peopleGes;
-            gebId('rueckmeldungAbmeldung').textContent = worked;
-
-            gebId('comment').style.display = 'block';
-            setTimeout(function() {
-            }, 200);
-            gebId('comment').style.display = 'display';
-        } else {
-            var err = "Etwas hat nicht geklappt. Versuche es erneut";
-            gebId('rueckmeldungAbmeldung').textContent = err;
-        }
-    
-}
-
-function showAbmeldenBody(){
-    gebId('abmeldenBody').style.display = 'flex';
-    var placeholder = beSureWord + " hier";
-    var anweisung = "Wenn du dich wirklich abmelden willst, gib das Wort >" + beSureWord + "< hier ein.";
-    gebId('beSureAnweisung').textContent = anweisung;
-    gebId('beSure').setAttribute("placeholder", placeholder);
-}
-
-
 
 function autoGrow(element) {
     element.style.height = "auto";  // Setzt die Höhe auf "auto", um die Größe zurückzusetzen

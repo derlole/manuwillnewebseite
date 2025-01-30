@@ -1,8 +1,9 @@
 <div class="main-1 mid">
     <div style="display:none;" id="randomDiv"> <%- JSON.stringify(guests) %></div>
+    <div style="display:none;" id="nonrandomDiv"><%- JSON.stringify(id) %></div>
     <p id="rueckmeldungAbmeldung"></p>
     <div id="changeLogin" class="inner-form">
-        <form action="" method="post">
+        <form action="/deleteEntry" method="post">
             <div class="stapeln zentrieren">
                 <p>Gib deinen Namen ein, um dich abzumelden.</p>
                 <div class="kumpeln">
@@ -34,3 +35,4 @@
     <minusGuest id="minusGuests"></minusGuest>
     <sadSmiley>:(</sadSmiley>
 </div>             
+<script src="/js/abmeldenOnly.js"></script>

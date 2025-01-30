@@ -20,7 +20,7 @@ router.get("/ummelden", async (req, res) => {
 router.get("/abmelden", async (req, res) => {
     Guest.find({})
     .then((guests) => {
-    res.render("abmelden", { title: "Abmelden",guests: guests });
+    res.render("abmelden", { title: "Abmelden",guests: guests, sucess: false, id: '' });
     });
 });
 router.post("/createNewEntry", async (req, res) => {
@@ -104,17 +104,30 @@ router.post("/updateEntry", async (req, res) => {
 });
 router.post("/deleteEntry", async (req, res) => {
     try {
-        const { id } = req.body;
-        console.log(req.body);
-        res.send(true);
+        const { vorname, nachname } = req.body;
+         var guestToAbmelden = await Guest.findOne({ "name.0": vorname, "name.1": nachname });
+        Guest.find({})
+        .then((guests) => {
+            res.render("abmelden", { title: "Abmelden",guests: guests, sucess: false, id: guestToAbmelden.id });
+        });
     } catch (error) {
-        res.send(false);
+        res.redirect("/");
+    }
+});
+router.post("/deleteEntryFinal", async (req, res) => {
+    try {
+        const { guestDB_id } = req.body;
+        await Guest.findOneAndUpdate({ id: guestDB_id }, {
+            "name.2": true
+        }, { new: true });
+    } catch (error) {
+        res.redirect("/?message=Fehler beim Abmelden des Gastes");
     }
 });
 router.post("/getUserCreds", async (req, res) => {
     try {
         const { vorname, nachname  } = req.body;
-        Guest.findOne({ "name.0": vorname, "name.1": nachname })
+        Guest.findOne({ "name.0": vorname, "name.1": nachname, "name.2": false })
         .then((guest) => {
             if(guest != null){
                 if(guest.name[2] == false){

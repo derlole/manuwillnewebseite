@@ -105,10 +105,15 @@ router.post("/updateEntry", async (req, res) => {
 router.post("/deleteEntry", async (req, res) => {
     try {
         const { vorname, nachname } = req.body;
-         var guestToAbmelden = await Guest.findOne({ "name.0": vorname, "name.1": nachname });
+        var guestToAbmelden = await Guest.findOne({ "name.0": vorname, "name.1": nachname, "name.2": false });
+        if(guestToAbmelden == null){
+            res.redirect("/?message=Gast nicht gefunden");
+            return;
+        }
         Guest.find({})
         .then((guests) => {
             res.render("abmelden", { title: "Abmelden",guests: guests, sucess: false, id: guestToAbmelden.id });
+            return;
         });
     } catch (error) {
         res.redirect("/");
@@ -119,9 +124,17 @@ router.post("/deleteEntryFinal", async (req, res) => {
         const { guestDB_id } = req.body;
         await Guest.findOneAndUpdate({ id: guestDB_id }, {
             "name.2": true
-        }, { new: true });
+        }, { new: true })
+        .then((guest) => {
+            if(guest != null){
+                res.send(true);
+            }else{
+                res.send(false);
+            }
+        });
     } catch (error) {
         res.redirect("/?message=Fehler beim Abmelden des Gastes");
+        console.log(error);
     }
 });
 router.post("/getUserCreds", async (req, res) => {

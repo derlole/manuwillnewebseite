@@ -9,7 +9,13 @@ async function abmelden(){
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ guestDB_id })
-            });
+            })
+            .then((response) => {
+                console.log(response);
+                if(response.ok){
+                    window.location.href = "/";
+                }
+            })
             var peopleGes = 1;
             var dataGuests = JSON.parse(document.getElementById('randomDiv'));
             var worked = "Anmeldung erfolgreich revidiert";

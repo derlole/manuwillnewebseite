@@ -34,6 +34,7 @@ async function abmelden(){
 
 function showAbmeldenBody(){
     gebId('abmeldenBody').style.display = 'flex';
+    gebId('changeLogin').style.display = 'none';
     var placeholder = beSureWord + " hier";
     var anweisung = "Wenn du dich wirklich abmelden willst, gib das Wort >" + beSureWord + "< hier ein.";
     gebId('beSureAnweisung').textContent = anweisung;

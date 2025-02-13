@@ -3,7 +3,6 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const useragent = require('express-useragent');
 const Guest = require('../models/guest');
-
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
@@ -25,9 +24,20 @@ router.get("/abmelden", async (req, res) => {
 });
 router.post("/createNewEntry", async (req, res) => {
     try {
-        const { name, lastName, telnum, people, peopleinfo1, peopleinfo2, peopleinfo3, peopleinfo4, help, helpnot, all,veget,vegan,alerg,spezi, arrival, parkplatz, things, schlafplatz } = req.body;
+
+        var { name, lastName, telnum, people, peopleinfo1, peopleinfo2, peopleinfo3, peopleinfo4, help, helpnot, all,veget,vegan,alerg,spezi, arrival, parkplatz, things, schlafplatz, selection,salat,getränk,baguette,snacks,spiel,anderes,tsatsiki,abbau,anderesInput,salatInput  } = req.body;
+        console.log(selection);
         var peopleinfo =[]
         var helpp = [false]
+        if(salat === "on"){helpp.push(["salat", salatInput])}
+        if(getränk === "on"){helpp.push("getränk")}
+        if(baguette === "on"){helpp.push("baguette")}
+        if(snacks === "on"){helpp.push("snacks")}
+        if(spiel === "on"){helpp.push("spiel")}
+        if(anderes === "on"){helpp.push(["anderes", anderesInput])}
+        if(tsatsiki === "on"){helpp.push("tsatsiki")}
+        if(abbau === "on"){helpp.push("abbau")}
+
         var disorder = [false,false,false,false,false]
         const arrivall = new Date("2024-01-28"); //hier noch das richtige datummfestlegen
         const [hours, minutes] = arrival.split(":").map(Number); 
@@ -156,4 +166,5 @@ router.post("/getUserCreds", async (req, res) => {
         res.render("ummelden", { title: "UserCreds", guest: null, reportUserCreds: "Fehler beim finden des Gastes" });
     }
 });
+
 module.exports = router;

@@ -12,8 +12,9 @@ helpCheckbox.addEventListener('change', function() {
     if (helpCheckbox.checked) {
         gebId('helpnot').checked = false;
         gebId('telnum').required = true;
+        gebId('somethingRandom').style.display = 'block';
         telnum.style.display = 'block';
-        console.log(document.getElementById('telnum').require);
+        //console.log(document.getElementById('telnum').require);
     } else {
         gebId('telnum').required = false
         gebId('helpnot').checked = true;
@@ -24,6 +25,7 @@ helpNotCheckbox.addEventListener('change', function() {
     if (helpNotCheckbox.checked) {
         gebId('help').checked = false;
         gebId('telnum').required = false;
+        gebId('somethingRandom').style.display = 'none';
         telnum.style.display = 'none';
     } else {
         gebId('telnum').required = true
@@ -108,4 +110,16 @@ peopleCount.addEventListener('input', function() {
         default:
             gebId('tooMuchPeople').style.display = 'block';
     }
+});
+
+document.querySelectorAll('input[type="checkbox"][class="backfisch"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            document.querySelectorAll('input[type="checkbox"][class="backfisch"]').forEach((other) => {
+                if (other !== this) {
+                    other.checked = false;
+                }
+            });
+        }
+    });
 });

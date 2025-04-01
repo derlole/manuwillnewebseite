@@ -362,3 +362,7 @@ sadSmiley{
   margin-top: 15px;
   margin-left: 5px;
 }
+.horizont{
+  display: flex;
+  align-items: center;
+}
